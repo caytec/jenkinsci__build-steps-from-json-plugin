@@ -11,6 +11,7 @@ import org.json.JSONArray;
 import org.kohsuke.stapler.*;
 
 import java.io.IOException;
+import java.security.SecureRandom;
 import java.util.*;
 
 import org.jenkinsci.plugins.structs.describable.DescribableModel;
@@ -76,7 +77,7 @@ public class BuildStepsFromJsonBuilder extends Builder implements SimpleBuildSte
         return (DescriptorImpl) super.getDescriptor();
     }
 
-    private static Random generator = new Random();
+    private static Random generator = new SecureRandom();
 
     @Extension
     public static final class DescriptorImpl extends BuildStepDescriptor<Builder> {
